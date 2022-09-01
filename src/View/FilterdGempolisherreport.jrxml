@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a76871a-34ae-437e-ae55-7949714c1455">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="eid" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="status" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="edate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="today" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     expensegempolisher.`gex_id` AS expensegempolisher_gex_id,
+     expensegempolisher.`ex_no` AS expensegempolisher_ex_no,
+     expensegempolisher.`ex_eno` AS expensegempolisher_ex_gno,
+     expensegempolisher.`ex_fsalary` AS expensegempolisher_ex_fsalary,
+     expensegempolisher.`ex_bonus` AS expensegempolisher_ex_bonus,
+     expensegempolisher.`ex_tot` AS expensegempolisher_ex_tot,
+     expensegempolisher.`ex_pmethod` AS expensegempolisher_ex_pmethod,
+     expensegempolisher.`ex_pdate` AS expensegempolisher_ex_pdate,
+     expensegempolisher.`ex_status` AS expensegempolisher_ex_status
+FROM
+     `expensegempolisher` expensegempolisher
+where
+expensegempolisher.`ex_eno`=$P{eid} and  expensegempolisher.`ex_status`=$P{status} and expensegempolisher.`ex_pdate` between $P{sdate} and $P{edate}]]>
+	</queryString>
+	<field name="expensegempolisher_gex_id" class="java.lang.String"/>
+	<field name="expensegempolisher_ex_no" class="java.lang.Integer"/>
+	<field name="expensegempolisher_ex_gno" class="java.lang.String"/>
+	<field name="expensegempolisher_ex_fsalary" class="java.lang.Float"/>
+	<field name="expensegempolisher_ex_bonus" class="java.lang.Float"/>
+	<field name="expensegempolisher_ex_tot" class="java.lang.Float"/>
+	<field name="expensegempolisher_ex_pmethod" class="java.lang.String"/>
+	<field name="expensegempolisher_ex_pdate" class="java.sql.Date"/>
+	<field name="expensegempolisher_ex_status" class="java.lang.String"/>
+	<variable name="tsalary" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{expensegempolisher_ex_fsalary}]]></variableExpression>
+	</variable>
+	<variable name="tbonus" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{expensegempolisher_ex_bonus}]]></variableExpression>
+	</variable>
+	<variable name="records" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{expensegempolisher_gex_id}]]></variableExpression>
+	</variable>
+	<variable name="total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{expensegempolisher_ex_tot}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="115" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="555" height="112" uuid="5d13d3d7-afa2-4661-9feb-d579ba437701"/>
+				<imageExpression><![CDATA["D:\\screen record\\bandicam 2022-02-25 14-24-47-209.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="61" width="87" height="19" uuid="b30d37ce-4e84-4faf-930c-095554f6f5bb"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem Polisher ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="2" width="159" height="20" uuid="1eaaff8d-16b9-43d9-ab5d-fecce78e02ad"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report : Salary Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="22" width="87" height="20" uuid="77173fec-740a-4f81-9eaa-b845640e85d9"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Details From :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="41" width="124" height="20" uuid="58210f15-95da-4402-a0cb-3854f0380686"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report Generated Date :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="61" width="100" height="20" uuid="3eeb21ec-3c3c-4ffd-ab79-799857663ef0"/>
+				<textFieldExpression><![CDATA[$P{eid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="41" width="100" height="20" uuid="d5131825-5c31-43ef-8e11-657efe9213d4"/>
+				<textFieldExpression><![CDATA[$P{today}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="21" width="100" height="20" uuid="6e913463-a464-4b68-98bc-d324c9356b58"/>
+				<textFieldExpression><![CDATA[$P{sdate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="208" y="22" width="28" height="20" uuid="933baba0-85c3-4f53-b1bf-472afe6df74b"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="238" y="21" width="100" height="20" uuid="91e57068-5ae9-4bf1-aec2-a9b0c76137a3"/>
+				<textFieldExpression><![CDATA[$P{edate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="-2" y="0" width="100" height="20" uuid="d73c9231-dfb3-4430-a295-c5b798eefbb6"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Expenses ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="453" y="0" width="100" height="20" uuid="50f3ef6e-a7c7-47e8-bd5b-b47cf4d2d7bb"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount(Rs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="0" width="100" height="20" uuid="8c660e8d-313c-4a8d-b262-2f11c61a3257"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transaction Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="0" width="83" height="20" uuid="4de4c6fa-deda-4e36-bfce-5e6c50fefe31"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bonus(Rs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="0" width="100" height="20" uuid="337a38ea-99c1-4c2a-8a15-3c9d60f5d954"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Salary (Rs)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="14" y="0" width="84" height="20" uuid="511ebc44-5d8b-49da-8e65-c019e8902688"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{expensegempolisher_gex_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="0" width="100" height="20" uuid="c0696774-abb2-4484-9368-659b663680e5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{expensegempolisher_ex_pdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="0" width="100" height="20" uuid="10bfb7c3-db85-40f2-a0a3-83f170f7b953"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{expensegempolisher_ex_fsalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="0" width="81" height="20" uuid="3e47d676-3a3e-4e55-9dfb-4007feffecc2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{expensegempolisher_ex_bonus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="453" y="0" width="100" height="20" uuid="73a744aa-1bd1-484e-956a-088429c9d530"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{expensegempolisher_ex_tot}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="14" y="24" width="521" height="1" uuid="ae0a160b-3c8d-4991-ad1c-698182421998"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="185" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="7" width="100" height="20" uuid="f93849fa-8ed4-477e-8ed7-f8f3873c07f7"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUMMERY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="27" width="124" height="20" uuid="b90e31f3-2cb3-4a92-b0e6-39eed46423f5"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Salary :(Rs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="88" width="134" height="20" uuid="4d862cc3-2f75-4086-89f6-d54fe0c8ba27"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Income Amount : (Rs)]]></text>
+			</staticText>
+			<image>
+				<reportElement x="-9" y="108" width="131" height="73" uuid="b22ee17d-472b-43a4-9e44-757f0d9a4ea7"/>
+				<imageExpression><![CDATA["C:\\Users\\Chamod Dilushanka\\Downloads\\bandicam_2022-02-26_09-40-20-541-removebg-preview.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="14" y="48" width="124" height="20" uuid="52a119c2-c0a5-4248-9b05-ef59edf48f84"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Bonus :(Rs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="68" width="134" height="20" uuid="90719fb2-1b76-4709-8efd-f01af9f3cb5c"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total number of Records :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="138" y="28" width="100" height="20" uuid="8d140f62-64cd-4fd4-b879-30bf43cdee7e"/>
+				<textFieldExpression><![CDATA[$V{tsalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="47" width="100" height="20" uuid="e111650f-f6db-4c88-ac3f-0be1e0cf8dbb"/>
+				<textFieldExpression><![CDATA[$V{tbonus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="68" width="100" height="20" uuid="ad8a481d-afe0-47b8-a741-bb50e1514e43"/>
+				<textFieldExpression><![CDATA[$V{records}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="88" width="100" height="20" uuid="a3646317-6b3a-475b-b35f-2a34366d3ce9"/>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="161" width="87" height="20" uuid="dfa478dc-2ade-4cf6-8ab5-8f5b66ce5403"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[owner signature]]></text>
+			</staticText>
+			<line>
+				<reportElement x="14" y="4" width="521" height="1" uuid="db63da1f-0c66-4915-bfe4-4c3f65aaaee9"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="231" y="0" width="100" height="20" uuid="53da24f5-00e8-4318-9c63-d01bad564f39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

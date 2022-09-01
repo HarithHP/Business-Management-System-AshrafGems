@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea282250-d45d-48ca-9703-2757d2152d05">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Supid" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="status" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     expensesupplier.`exs_id` AS expensesupplier_exs_id,
+     expensesupplier.`ex_tot` AS expensesupplier_ex_tot,
+     expensesupplier.`ex_pdate` AS expensesupplier_ex_pdate,
+     expensesupplier.`ex_sno` AS expensesupplier_ex_sno,
+     expensesupplier.`ex_sono` AS expensesupplier_ex_sono,
+     expensesupplier.`ex_pmethod` AS expensesupplier_ex_pmethod
+FROM
+     `expensesupplier` expensesupplier
+WHERE
+     expensesupplier.`ex_sno` = $P{Supid}
+     and expensesupplier.`ex_status` = $P{status}]]>
+	</queryString>
+	<field name="expensesupplier_exs_id" class="java.lang.String"/>
+	<field name="expensesupplier_ex_tot" class="java.lang.Float"/>
+	<field name="expensesupplier_ex_pdate" class="java.sql.Date"/>
+	<field name="expensesupplier_ex_sno" class="java.lang.String"/>
+	<field name="expensesupplier_ex_sono" class="java.lang.String"/>
+	<field name="expensesupplier_ex_pmethod" class="java.lang.String"/>
+	<variable name="TotalAmount" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{expensesupplier_ex_tot}]]></variableExpression>
+	</variable>
+	<variable name="Count" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{expensesupplier_exs_id}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="1" width="555" height="112" uuid="be071ccc-7df2-4e1b-95e3-da05c477a475"/>
+				<imageExpression><![CDATA["D:\\screen record\\bandicam 2022-02-25 14-24-47-209.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="19" y="1" width="159" height="20" uuid="0f21a34b-6112-40f2-9de8-4878849cbf5f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report : Income Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="70" width="56" height="19" uuid="5036ab48-a3d3-457c-95f9-0401a3f1d4b9"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="34" width="124" height="20" uuid="f6837d0f-0452-4019-8bd2-3d87e20e9d27"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report Generated Date :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="91" y="69" width="100" height="20" uuid="3da249f6-0cb3-4332-bb9a-66894663e091"/>
+				<textFieldExpression><![CDATA[$P{Supid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="34" width="100" height="20" uuid="523ccdd8-bb50-47fd-b061-7255e50f87bc"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="19" y="13" width="100" height="20" uuid="8e18b895-a179-4fb4-9313-3654fe9544b6"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transaction ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="13" width="100" height="20" uuid="e62589c6-40c8-479b-be4e-503d7ad7e571"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="13" width="100" height="20" uuid="7b9a91f0-7b54-4271-a506-4e2417406711"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Method]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="434" y="13" width="100" height="20" uuid="c65dccd0-040d-4b9e-8b0c-f2d972f82284"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount ( Rs )]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="19" y="0" width="100" height="20" uuid="712f8471-18cd-4440-8db5-875da694c0d9"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{expensesupplier_exs_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="0" width="100" height="20" uuid="bef4b8a6-5701-4b13-b363-015cc597cb01"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{expensesupplier_ex_pdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="0" width="100" height="20" uuid="ae863180-cfa0-478e-966d-cdefccfdb5fa"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{expensesupplier_ex_tot}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="19" y="22" width="515" height="1" uuid="8aab45fc-771c-446d-8d9a-8eb8efcdaf7e"/>
+			</line>
+			<textField>
+				<reportElement x="288" y="2" width="100" height="20" uuid="585686a1-5ffe-41a8-90ea-525e0f789306"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{expensesupplier_ex_pmethod}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="138" splitType="Stretch">
+			<staticText>
+				<reportElement x="19" y="118" width="87" height="20" uuid="993c4b97-f4b2-47a2-a444-a6f3a3f7fd2c"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[owner signature]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="65" width="131" height="73" uuid="b6d0dddd-5670-47b8-80bd-70760ff30bdb"/>
+				<imageExpression><![CDATA["C:\\Users\\Chamod Dilushanka\\Downloads\\bandicam_2022-02-26_09-40-20-541-removebg-preview.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="19" y="45" width="124" height="20" uuid="9429dc56-36ce-4e33-9aa6-f418fa037e3a"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Income Amount : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="25" width="124" height="20" uuid="77439d26-3ac6-4b6b-b1cf-a7dac0eef2d1"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total number of Record :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="6" width="100" height="20" uuid="4471747b-c3d8-4354-a53a-601ff4a69723"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUMMERY]]></text>
+			</staticText>
+			<line>
+				<reportElement x="19" y="3" width="515" height="1" uuid="d5e1742b-f6af-4fbc-845e-738fa8fac027"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="164" y="45" width="100" height="20" uuid="67ab403c-db96-4221-b6d8-4599f8b31e61"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TotalAmount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="143" y="45" width="21" height="20" uuid="437cc6be-d415-4d5b-abb5-7250065909e8"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Rs)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="143" y="25" width="100" height="20" uuid="6c4983fd-645a-4a03-8f0b-89eef02fad6b"/>
+				<textFieldExpression><![CDATA[$V{Count}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="212" y="0" width="100" height="20" uuid="2fb2249e-d451-4b1f-8d0f-e4361f3764d5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

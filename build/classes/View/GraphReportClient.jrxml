@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f68105cc-9da3-4929-a680-778b4d58ea23">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="55"/>
+	<parameter name="Clientid" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     cliorder.`c_oid` AS cliorder_c_oid,
+     cliorder.`c_ototal` AS cliorder_c_ototal
+FROM
+     `cliorder` cliorder  where cliorder.`c_no`=$P{Clientid}]]>
+	</queryString>
+	<field name="cliorder_c_oid" class="java.lang.String"/>
+	<field name="cliorder_c_ototal" class="java.lang.Float"/>
+	<variable name="Count" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{cliorder_c_oid}]]></variableExpression>
+	</variable>
+	<variable name="Total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{cliorder_c_ototal}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="2" width="555" height="112" uuid="303d10fc-f014-4bb3-b17c-47179c1f7ee5"/>
+				<imageExpression><![CDATA["D:\\screen record\\bandicam 2022-02-25 14-24-47-209.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="99" splitType="Stretch">
+			<staticText>
+				<reportElement x="34" y="41" width="124" height="20" uuid="f7d39d97-ee28-4375-90de-1c394a560cd1"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report Generated Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="70" width="56" height="19" uuid="18fa25aa-f463-49ea-acc3-15f7fe7909a5"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Client ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="10" width="159" height="20" uuid="63550d14-db8e-4f03-acf3-10f3402170af"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report : Order Cost Report]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="69" width="100" height="20" uuid="e0d68ad1-f28c-433e-9d7a-2f6d1c074594"/>
+				<textFieldExpression><![CDATA[$P{Clientid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="41" width="100" height="20" uuid="a5feae04-e9d0-4bdd-a877-25b6b3ce1257"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="250" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement x="34" y="19" width="484" height="231" uuid="5bec5c26-7f0d-4c8e-bc41-3f4776684642"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Order ID"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{cliorder_c_oid}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{cliorder_c_ototal}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<break type="Column">
+				<reportElement x="0" y="249" width="100" height="1" uuid="54859206-fdf3-487f-97d6-ec32f4c0ee68"/>
+			</break>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="34" y="54" width="87" height="20" uuid="4d3119d5-bb8d-4cd6-9906-6773194eff97"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[owner signature]]></text>
+			</staticText>
+			<image>
+				<reportElement x="15" y="0" width="131" height="73" uuid="4f0bb3d9-bde1-4622-a4c3-037e60a22aa4"/>
+				<imageExpression><![CDATA["C:\\Users\\Chamod Dilushanka\\Downloads\\bandicam_2022-02-26_09-40-20-541-removebg-preview.png"]]></imageExpression>
+			</image>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="226" y="4" width="100" height="20" uuid="cc71f7c1-307e-444a-a482-99a5c1282589"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

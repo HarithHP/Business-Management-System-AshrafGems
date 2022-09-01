@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e5bc053-e858-4bfb-90ec-aa45511469de">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="55"/>
+	<parameter name="sid" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gtype" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gcolor" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gweight" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gvariety" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gorigin" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gnature" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gcid" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gpieces" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gshape" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gprice" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     suporder.`s_oid` AS suporder_s_oid
+FROM
+     `suporder` suporder]]>
+	</queryString>
+	<field name="suporder_s_oid" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="117" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="2" width="555" height="112" uuid="d7a3f9ba-6f90-479a-b3e0-796a8b408194"/>
+				<imageExpression><![CDATA["D:\\screen record\\bandicam 2022-02-25 14-24-47-209.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="131" y="0" width="292" height="20" uuid="df49e573-e3b0-43e3-b1c6-61fd37fe98ac"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ INVOICE]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="355" splitType="Stretch">
+			<staticText>
+				<reportElement x="37" y="12" width="94" height="20" uuid="c57d3714-4537-4143-bcfe-7451d577c86f"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier details]]></text>
+			</staticText>
+			<line>
+				<reportElement x="37" y="7" width="485" height="1" uuid="b671a884-4e9e-4dfd-b399-3c42b820e9fa"/>
+			</line>
+			<staticText>
+				<reportElement x="131" y="37" width="135" height="20" uuid="b4cc5c6b-a624-42b9-9d48-c7dff5db1901"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier ID                        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="104" width="135" height="20" uuid="0d4941a8-0556-4725-9e61-aab471b5f6ae"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem Type                         :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="124" width="135" height="20" uuid="dba8fe4a-2987-4356-b10a-0d1b7fe27c17"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem Color                        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="84" width="135" height="20" uuid="db6923da-67a2-4ade-8cc9-90807cd4a39a"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem Name                       :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="144" width="135" height="20" uuid="1094858e-ddb1-434e-8fca-1d1ae6bed22b"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem Weight                      :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="37" y="63" width="485" height="1" uuid="ff814174-d518-498a-ae98-aa6e3350bf32"/>
+			</line>
+			<staticText>
+				<reportElement x="37" y="64" width="94" height="20" uuid="e4888ad6-12eb-4aa1-be2a-d622256b9bde"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="204" width="135" height="20" uuid="36ef4b88-9356-4e34-851b-90650313599f"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem Nature                      :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="224" width="135" height="20" uuid="366a57a4-8caa-4da3-a8fc-5fe7806f314a"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem certifiate ID              :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="184" width="135" height="20" uuid="e0f1a5e0-b10b-404e-8804-dcf6ec295093"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem Origin                       :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="164" width="135" height="20" uuid="8805a66c-e7a6-45a8-b802-d9b73b9aab91"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Status                      :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="326" width="135" height="20" uuid="be693b8d-1467-4ade-af5f-45fe840df84e"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Expecting price (Rs)              :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="264" width="135" height="20" uuid="dfc35740-2ea7-4007-b860-f76b5ea81487"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem shape                       :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="244" width="135" height="20" uuid="2665bb4e-16ad-4349-a66c-95f494971b17"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gem pieces                      :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="37" y="309" width="485" height="1" uuid="87f2ea6f-d323-49fb-a313-ea3467ff4fff"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="276" y="320" width="100" height="1" uuid="f57b537a-25c2-42e1-b8fd-b41d72985f7b"/>
+			</line>
+			<line>
+				<reportElement x="276" y="342" width="100" height="1" uuid="78eea8d0-9e3e-4647-a8c0-c20f63546d49"/>
+			</line>
+			<line>
+				<reportElement x="276" y="346" width="100" height="1" uuid="a4ae69eb-0a5f-4c53-a09d-89ca519edc4f"/>
+			</line>
+			<textField>
+				<reportElement x="276" y="326" width="100" height="20" uuid="5d1cd416-45f2-4558-9961-a0257647685c"/>
+				<textFieldExpression><![CDATA[$P{gprice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="264" width="100" height="20" uuid="8492b344-fc74-4cec-92ec-192a14b4caa3"/>
+				<textFieldExpression><![CDATA[$P{gshape}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="244" width="100" height="20" uuid="57951f86-7193-40ff-97dd-6ce70901eb26"/>
+				<textFieldExpression><![CDATA[$P{gpieces}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="224" width="100" height="20" uuid="c20195a7-88b1-4d54-a1d7-6490e68980ce"/>
+				<textFieldExpression><![CDATA[$P{gcid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="204" width="100" height="20" uuid="9ceb19db-6e78-4175-b102-0b8821d18f2d"/>
+				<textFieldExpression><![CDATA[$P{gnature}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="184" width="100" height="20" uuid="370a2a0b-7fef-46f4-8892-d7dc1859afd9"/>
+				<textFieldExpression><![CDATA[$P{gorigin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="164" width="100" height="20" uuid="72f821b7-fc9a-4aa2-8fa7-e195f1dbc5b5"/>
+				<textFieldExpression><![CDATA[$P{gvariety}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="144" width="100" height="20" uuid="a1e52688-19a0-40be-9e34-57c0039370dc"/>
+				<textFieldExpression><![CDATA[$P{gweight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="124" width="100" height="20" uuid="33c5c3c5-5bd1-4ab2-8385-ab501d411ccd"/>
+				<textFieldExpression><![CDATA[$P{gcolor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="104" width="100" height="20" uuid="b0884f6d-d00d-4e01-9205-597a5dc266dc"/>
+				<textFieldExpression><![CDATA[$P{gtype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="84" width="100" height="20" uuid="31aefdb3-1002-4c76-ab69-2ffac68fa972"/>
+				<textFieldExpression><![CDATA[$P{gname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="37" width="100" height="20" uuid="bf9d1dc3-37d7-484a-8e2f-345bd83b084d"/>
+				<textFieldExpression><![CDATA[$P{sid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="80" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="131" height="73" uuid="3c5a5ec3-0968-4483-a629-27a457145c9f"/>
+				<imageExpression><![CDATA["C:\\Users\\Chamod Dilushanka\\Downloads\\bandicam_2022-02-26_09-40-20-541-removebg-preview.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="408" y="60" width="41" height="20" uuid="db4358cc-6d50-4ce2-9dda-c8fdf83a5bbc"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="60" width="87" height="20" uuid="d818369c-7cea-4392-8a48-56b50502252d"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[owner signature]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="449" y="60" width="100" height="20" uuid="36fc539d-e4d1-4688-ab8c-04355b83aaf0"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="224" y="0" width="100" height="20" uuid="9039d415-8edd-4612-97b6-cc3b061cb884"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

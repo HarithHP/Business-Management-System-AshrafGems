@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ed421c5-6062-44f2-a9cd-d46a48c8045c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="43"/>
+	<parameter name="SRAID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Fname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Lname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Email" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="contact" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Oid" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="EID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SEID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Ramount" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     expensesupplier.`exs_id` AS expensesupplier_exs_id
+FROM
+     `expensesupplier` expensesupplier]]>
+	</queryString>
+	<field name="expensesupplier_exs_id" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="117" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="555" height="112" uuid="e2aabe3f-4a7a-4d96-9713-98f76d254b2c"/>
+				<imageExpression><![CDATA["D:\\screen record\\bandicam 2022-02-25 14-24-47-209.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="125" y="0" width="318" height="20" uuid="71b9761d-a34a-4797-9c3c-60cd6a183ec8"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier expenses INVOICE]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="304" splitType="Stretch">
+			<line>
+				<reportElement x="31" y="11" width="484" height="1" uuid="765b4cd1-163e-44fb-b1c2-560e6ed6e037"/>
+			</line>
+			<staticText>
+				<reportElement x="31" y="12" width="94" height="20" uuid="c154fec9-0f98-48c2-8893-bfd75151ae9d"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="80" width="135" height="20" uuid="ab2ee254-a75f-4240-a2f0-f514891473a7"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[First Name                        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="41" width="135" height="20" uuid="4b618ecd-3f1c-4aa7-8ec0-fb49b92c5574"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier Refferal Agent ID:     ;]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="61" width="135" height="20" uuid="39d18334-0a38-442a-8204-0cab83b62c3d"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier ID                        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="100" width="135" height="20" uuid="9a6ea1c6-43a2-443d-a8b4-0b464b61d313"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Last Name                        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="120" width="135" height="20" uuid="16aa43eb-7f95-4e22-a04f-032e5a57c588"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email                                :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="140" width="135" height="20" uuid="552e36ce-f7c5-4544-8874-b268b3dc3ec2"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact No                       :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="31" y="180" width="484" height="1" uuid="3cfd326d-8809-4999-948d-d5ff199f2b82"/>
+			</line>
+			<staticText>
+				<reportElement x="31" y="181" width="94" height="20" uuid="90a79ffa-36b9-4bf2-9e66-dbbad9615107"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="201" width="135" height="20" uuid="66f58e6e-7320-40fd-8a83-cf4fc67931e8"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order ID                           :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="221" width="135" height="20" uuid="8ad4e3aa-da88-4d84-9126-41845475bb53"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Expenses ID                    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="241" width="135" height="20" uuid="acb6fb81-e9dd-4b1f-b004-9b1df1d642ec"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier Expenses ID     :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="281" width="135" height="20" uuid="519baaa4-4940-48e6-a487-7d5ed6558633"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Request Amount (Rs)             :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="260" y="41" width="100" height="20" uuid="561043e2-a24e-4540-ae1f-5d4c45ac5bbc"/>
+				<textFieldExpression><![CDATA[$P{SRAID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="61" width="100" height="20" uuid="4b5fb736-eb87-4bf7-898e-3ca0eb9dd101"/>
+				<textFieldExpression><![CDATA[$P{SID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="81" width="100" height="20" uuid="875cdf8b-3b4f-4b61-be18-723bef2941c8"/>
+				<textFieldExpression><![CDATA[$P{Fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="101" width="100" height="20" uuid="3161a4a3-142b-4602-8595-fd5ac4bb361d"/>
+				<textFieldExpression><![CDATA[$P{Lname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="221" width="100" height="20" uuid="afb54bbd-45ea-4469-97e9-2e5dd7625780"/>
+				<textFieldExpression><![CDATA[$P{EID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="121" width="100" height="20" uuid="76e9b253-a634-465e-beb0-17a0805c0c23"/>
+				<textFieldExpression><![CDATA[$P{Email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="141" width="100" height="20" uuid="29ced45b-1357-4322-b4e5-452906bdcc1d"/>
+				<textFieldExpression><![CDATA[$P{contact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="201" width="100" height="20" uuid="3deed6cd-e854-4c43-be63-cc0e4324fbc1"/>
+				<textFieldExpression><![CDATA[$P{Oid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="241" width="100" height="20" uuid="030d91e4-81e8-441a-ae0a-926eef066d9a"/>
+				<textFieldExpression><![CDATA[$P{SEID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="281" width="100" height="20" uuid="a5a90ad5-ae6e-4713-8fff-b3a860936d24"/>
+				<textFieldExpression><![CDATA[$P{Ramount}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="31" y="269" width="484" height="1" uuid="d25a61dc-986b-4df3-9fc9-aae3616aaf81"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="260" y="278" width="100" height="1" uuid="58768a57-03d4-4f70-96a4-eef92259fce8"/>
+			</line>
+			<line>
+				<reportElement x="259" y="295" width="100" height="1" uuid="1b757e90-0414-4aa5-99b6-6354cfe83e3c"/>
+			</line>
+			<line>
+				<reportElement x="259" y="299" width="100" height="1" uuid="008d6d62-605d-4f60-b960-170cf89840ab"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="94" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="21" width="131" height="73" uuid="74157739-67bd-47ec-a1a9-b322e7b10b8c"/>
+				<imageExpression><![CDATA["C:\\Users\\Chamod Dilushanka\\Downloads\\bandicam_2022-02-26_09-40-20-541-removebg-preview.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="31" y="74" width="87" height="20" uuid="2910484e-c0ab-4185-b516-35a5d52beeaf"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[owner signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="74" width="41" height="20" uuid="664dc230-bc16-4900-a5cd-c1330c3286af"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="443" y="74" width="100" height="20" uuid="e0e89642-05cf-45d6-a5c7-7514b960ab5e"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="225" y="0" width="100" height="20" uuid="75f6d42d-a337-483b-890c-2e7e1e8701de"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
