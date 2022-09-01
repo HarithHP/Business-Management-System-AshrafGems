@@ -1,6 +1,9 @@
-This is a windows application(protype) for AshrafGems pvt Ltd.
+This is a windows application which is can manage the entire gem business with
+five different users.(Owners ,Gem suppliers, Clients, Workers, Company
+Agents).Manage users Information, Gem Inventory, Salary calculations, Assign jobs
+for workers, Generate Reports and there are more key functionalities.
 
-Description - The project is conducted to implement a Business management software for Ashraf Gems 
+Description and usage of project - The project is conducted to implement a Business management software for Ashraf Gems 
 Pvt Ltd. This project is implemented to clear all the difficulties and errors faced by the 
 stakeholders of the Ashraf Gems and increase their sales and market as well. This
 projectis essential for several parties. The leading stakeholder is owner who use the
