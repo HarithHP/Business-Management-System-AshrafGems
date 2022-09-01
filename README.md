@@ -1,3 +1,5 @@
+# Business Management Software for Ashraf Gems pvt Ltd.
+
 This is a windows application which is can manage the entire gem business with
 five different users.(Owners ,Gem suppliers, Clients, Workers, Company
 Agents).Manage users Information, Gem Inventory, Salary calculations, Assign jobs
